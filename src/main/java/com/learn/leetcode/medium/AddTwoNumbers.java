@@ -27,7 +27,7 @@ public class AddTwoNumbers {
             int sum = carry + x + y;
             carry = sum / 10;
             current.next = new ListNode(sum % 10);
-            current = dummyHead.next;
+            current = current.next;
             if (p != null) {
                 p = p.next;
             }
