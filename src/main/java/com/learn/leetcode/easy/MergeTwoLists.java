@@ -2,8 +2,6 @@ package com.learn.leetcode.easy;
 
 import com.learn.leetcode.medium.model.ListNode;
 
-import java.util.List;
-
 /**
  * @description: 整合两个集合
  * @author: gary
