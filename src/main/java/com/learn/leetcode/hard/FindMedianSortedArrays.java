@@ -8,6 +8,27 @@ package com.learn.leetcode.hard;
  **/
 public class FindMedianSortedArrays {
 
+    public double findMedianSortedArraysWithOneArray(int[] num1, int[] num2) {
+        int m = num1.length;
+        int n = num2.length;
+        int len = m + n;
+        int left = -1, right = -1;
+        int aStart = 0, bStart = 0;
+        for (int i = 0; i <= len / 2; i++) {
+            left = right;
+            if (aStart < m && (bStart >= n || num1[aStart] < num2[bStart])) {
+                right = num1[aStart++];
+            } else {
+                right = num2[bStart++];
+            }
+        }
+        if ((len & 1) == 0) {
+            return (left + right) / 2.0;
+        } else {
+            return right;
+        }
+    }
+
     public double findMedianSortedArrays(int[] num1, int[] num2) {
         int m = num1.length;
         int n = num2.length;
